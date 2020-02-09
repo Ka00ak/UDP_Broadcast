@@ -40,7 +40,8 @@ class CheckUtility {
             while (true) {
                 val clientSocket = serverSocket.accept()
                 Thread(Runnable {
-                    val request = String(clientSocket.getInputStream().readAllBytes()).split(" ")
+
+                    val request = clientSocket.getInputStream().bufferedReader().readText().split(" ")
                     if (WORKING_ANSWER == request[0])
                         println("[${request[1]}] node is working")
                     clientSocket.close()

@@ -1,5 +1,4 @@
 fun main(args: Array<String>) {
-    Bot().work()
+//    Bot().work()
+    CheckUtility().work()
 }
-
-

@@ -70,7 +70,7 @@ class Bot {
                 Thread(Runnable {
                     val clientAddress = clientSocket.inetAddress
 
-                    val request = String(clientSocket.getInputStream().readAllBytes())
+                    val request = clientSocket.getInputStream().bufferedReader().readText()
                     if (POWER_OFF_REQUEST == request) {
                         println("Power off request from [$clientAddress]")
                         exitProcess(0)
