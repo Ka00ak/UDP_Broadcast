@@ -1,4 +1,3 @@
-
-fun main(){
+fun main() {
     CheckUtility().work()
 }

@@ -43,3 +43,15 @@ jar {
         }
     }
 }
+
+task jarUtility(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'MainUtilityKt'
+    }
+
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
